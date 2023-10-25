@@ -12,4 +12,4 @@ export const GET = async () => {
   } catch (error) {
     return NextResponse.json({ error }, { status: 500 });
   }
-}
+};

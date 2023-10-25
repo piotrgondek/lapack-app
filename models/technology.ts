@@ -1,20 +1,27 @@
 import { Model, Schema, model, models } from "mongoose";
 
-export const ref = "Technology"
+export const ref = "Technology";
 
-export type TechnologyDocument = {
+export interface TechnologyDocument {
   name: string;
-};
+}
 
-const TechnologySchema = new Schema<TechnologyDocument>({
-  name: {
-    type: String,
-    required: true,
+const x;
+
+const TechnologySchema = new Schema<TechnologyDocument>(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
   },
-}, {
-  timestamps: true,
-  })
+  {
+    timestamps: true,
+  },
+);
 
-const Technology: Model<TechnologyDocument> = models.Technology ?? model<TechnologyDocument>(ref, TechnologySchema);
+const Technology =
+  (models.Technology as Model<TechnologyDocument> | undefined) ??
+  model<TechnologyDocument>(ref, TechnologySchema);
 
 export default Technology;

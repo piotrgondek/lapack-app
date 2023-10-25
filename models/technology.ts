@@ -1,4 +1,4 @@
-import { Schema, model, models } from "mongoose";
+import { Model, Schema, model, models } from "mongoose";
 
 export const ref = "Technology"
 
@@ -11,8 +11,10 @@ const TechnologySchema = new Schema<TechnologyDocument>({
     type: String,
     required: true,
   },
-})
+}, {
+  timestamps: true,
+  })
 
-const Technology = models.Technology ?? model<TechnologyDocument>(ref, TechnologySchema);
+const Technology: Model<TechnologyDocument> = models.Technology ?? model<TechnologyDocument>(ref, TechnologySchema);
 
 export default Technology;

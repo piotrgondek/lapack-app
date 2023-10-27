@@ -6,8 +6,6 @@ export interface TechnologyDocument {
   name: string;
 }
 
-const x;
-
 const TechnologySchema = new Schema<TechnologyDocument>(
   {
     name: {

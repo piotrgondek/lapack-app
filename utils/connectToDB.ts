@@ -18,13 +18,15 @@ const connectToDB = async () => {
   }
 
   try {
-    await mongoose.connect(process.env.MONGODB_URI, {
+    const connectionResult = await mongoose.connect(process.env.MONGODB_URI, {
       dbName: process.env.MONGODB_DB_NAME,
     });
 
     isConnected = true;
 
     console.log("MongoDB connected");
+
+    return connectionResult.connection.db;
   } catch (error) {
     console.log(error);
   }

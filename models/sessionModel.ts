@@ -20,7 +20,8 @@ const SessionSchema = new Schema<AdapterSession>({
 });
 
 const SessionModel =
-  (models.Session as Model<AdapterSession> | undefined) ??
-  model<AdapterSession>(sessionRef, SessionSchema);
+  "Session" in models
+    ? (models.Session satisfies Model<AdapterSession>)
+    : model<AdapterSession>(sessionRef, SessionSchema);
 
 export default SessionModel;

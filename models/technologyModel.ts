@@ -19,7 +19,8 @@ const TechnologySchema = new Schema<TechnologyDocument>(
 );
 
 const Technology =
-  (models.Technology as Model<TechnologyDocument> | undefined) ??
-  model<TechnologyDocument>(ref, TechnologySchema);
+  "Technology" in models
+    ? (models.Technology satisfies Model<TechnologyDocument>)
+    : model<TechnologyDocument>(ref, TechnologySchema);
 
 export default Technology;

@@ -1,7 +1,7 @@
-import AccountModel from "@/models/account";
-import SessionModel from "@/models/session";
-import UserModel from "@/models/user";
-import VerificationTokenModel from "@/models/verificationToken";
+import AccountModel from "@/models/accountModel";
+import SessionModel from "@/models/sessionModel";
+import UserModel from "@/models/userModel";
+import VerificationTokenModel from "@/models/verificationTokenModel";
 import { MongooseAdapter } from "@/utils/MongooseAdapter";
 import connectToDB from "@/utils/connectToDB";
 import NextAuth from "next-auth";

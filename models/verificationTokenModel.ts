@@ -10,7 +10,8 @@ const VerificationTokenSchema = new Schema<VerificationToken>({
 });
 
 const VerificationTokenModel =
-  (models.VerificationToken as Model<VerificationToken> | undefined) ??
-  model<VerificationToken>(verificationTokenRef, VerificationTokenSchema);
+  "VerificationToken" in models
+    ? (models.VerificationToken satisfies Model<VerificationToken>)
+    : model<VerificationToken>(verificationTokenRef, VerificationTokenSchema);
 
 export default VerificationTokenModel;

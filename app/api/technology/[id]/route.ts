@@ -1,4 +1,4 @@
-import Technology from "@/models/technology";
+import Technology from "@/models/technologyModel";
 import connectToDB from "@/utils/connectToDB";
 import { NextRequest, NextResponse } from "next/server";
 

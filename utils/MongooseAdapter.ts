@@ -11,7 +11,7 @@ interface MongooseAdapterOptions {
   AccountModel: Model<AdapterAccount>;
   SessionModel: Model<AdapterSession>;
   UserModel: Model<AdapterUser>;
-  VerificationTokenModel: Model<VerificationToken>; // TODO: sprawdzić nazwę, czy to jest mnoga czy nie
+  VerificationTokenModel: Model<VerificationToken>;
 }
 
 export function MongooseAdapter(

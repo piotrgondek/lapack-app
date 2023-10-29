@@ -1,12 +1,19 @@
-import clientPromise from "@/utils/mongodbClient";
-import { MongoDBAdapter } from "@auth/mongodb-adapter";
+import AccountModel from "@/models/account";
+import SessionModel from "@/models/session";
+import UserModel from "@/models/user";
+import VerificationTokenModel from "@/models/verificationToken";
+import { MongooseAdapter } from "@/utils/MongooseAdapter";
+import connectToDB from "@/utils/connectToDB";
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const handler = NextAuth({
-  adapter: MongoDBAdapter(clientPromise, {
-    databaseName: process.env.MONGODB_DB_NAME,
+  adapter: MongooseAdapter(connectToDB, {
+    VerificationTokenModel,
+    SessionModel,
+    UserModel,
+    AccountModel,
   }),
   providers: [
     GoogleProvider({

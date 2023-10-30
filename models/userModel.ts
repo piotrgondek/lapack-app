@@ -25,8 +25,8 @@ const UserSchema = new Schema<AdapterUser>({
 });
 
 const UserModel =
-  "User" in models
-    ? (models.User satisfies Model<AdapterUser>)
+  userRef in models
+    ? (models.User as Model<AdapterUser>)
     : model<AdapterUser>(userRef, UserSchema);
 
 export default UserModel;

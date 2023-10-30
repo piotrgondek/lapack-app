@@ -30,8 +30,8 @@ const AccountSchema = new Schema<AdapterAccount>({
 });
 
 const AccountModel =
-  "Account" in models
-    ? (models.Account satisfies Model<AdapterAccount>)
+  accountRef in models
+    ? (models.Account as Model<AdapterAccount>)
     : model<AdapterAccount>(accountRef, AccountSchema);
 
 export default AccountModel;

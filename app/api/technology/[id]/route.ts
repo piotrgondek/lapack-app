@@ -1,4 +1,4 @@
-import Technology from "@/models/technologyModel";
+import TechnologyModel from "@/models/technologyModel";
 import connectToDB from "@/utils/connectToDB";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -11,7 +11,7 @@ export const GET = async (
 
     await connectToDB();
 
-    const technology = await Technology.findById(id);
+    const technology = await TechnologyModel.findById(id);
 
     return NextResponse.json({ data: technology });
   } catch (error: unknown) {

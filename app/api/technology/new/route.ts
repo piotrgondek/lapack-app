@@ -1,4 +1,4 @@
-import Technology from "@/models/technologyModel";
+import TechnologyModel from "@/models/technologyModel";
 import connectToDB from "@/utils/connectToDB";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -8,7 +8,7 @@ export const POST = async (req: NextRequest) => {
 
     await connectToDB();
 
-    const technology = new Technology({ name });
+    const technology = new TechnologyModel({ name });
 
     const data = await technology.save();
 

@@ -1,6 +1,6 @@
 import { Model, Schema, model, models } from "mongoose";
 
-export const ref = "Technology";
+export const technologyRef = "Technology";
 
 export interface TechnologyDocument {
   name: string;
@@ -18,9 +18,9 @@ const TechnologySchema = new Schema<TechnologyDocument>(
   },
 );
 
-const Technology =
-  "Technology" in models
-    ? (models.Technology satisfies Model<TechnologyDocument>)
-    : model<TechnologyDocument>(ref, TechnologySchema);
+const TechnologyModel =
+  technologyRef in models
+    ? (models.Technology as Model<TechnologyDocument>)
+    : model<TechnologyDocument>(technologyRef, TechnologySchema);
 
-export default Technology;
+export default TechnologyModel;

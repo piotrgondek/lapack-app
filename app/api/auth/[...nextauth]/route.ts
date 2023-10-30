@@ -2,8 +2,8 @@ import AccountModel from "@/models/accountModel";
 import SessionModel from "@/models/sessionModel";
 import UserModel from "@/models/userModel";
 import VerificationTokenModel from "@/models/verificationTokenModel";
-import { MongooseAdapter } from "@/utils/MongooseAdapter";
-import connectToDB from "@/utils/connectToDB";
+import { MongooseAdapter } from "@/lib/MongooseAdapter";
+import connectToDB from "@/lib/connectToDB";
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 

@@ -16,7 +16,7 @@ export default function Home() {
   };
 
   return (
-    <main>
+    <main className="pt-2 p-4">
       <div>
         {session.data?.user && (
           <Avatar>

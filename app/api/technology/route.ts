@@ -1,5 +1,5 @@
 import TechnologyModel from "@/models/technologyModel";
-import connectToDB from "@/utils/connectToDB";
+import connectToDB from "@/lib/connectToDB";
 import { NextResponse } from "next/server";
 
 export const GET = async () => {

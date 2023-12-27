@@ -3,6 +3,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { useEffect } from "react";
 
 export default function Home() {
   const session = useSession();
@@ -14,6 +15,17 @@ export default function Home() {
   const lOut = () => {
     void signOut();
   };
+
+  useEffect(() => {
+    void fetch("/api/permissions/group")
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <main className="pt-2 p-4">
